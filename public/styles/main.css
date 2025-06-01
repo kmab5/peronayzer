@@ -8,6 +8,7 @@
     --primary-light: hsla(240, 100%, 95%, 0.9);
     --primary-grad: linear-gradient(215deg, hsla(240, 75%, 80%, 0.5) 0%, hsla(240, 25%, 50%, 0.75) 50%, hsla(240, 100%, 85%, 0.5) 100%);
     --white-bg: hsl(0, 0%, 100%, 0.1);
+    --grey: rgb(100, 100, 100);
 }
 
 * {
@@ -16,6 +17,7 @@
     box-sizing: border-box;
     font-family: 'Cabin', sans-serif;
     transition: all 0.2s ease;
+    caret-color: var(--primary-text);
 }
 
 body {
@@ -35,6 +37,7 @@ body.dark {
     --primary-accent: hsl(240, 25%, 25%);
     --primary-light: hsla(240, 100%, 5%, 0.9);
     --primary-grad: linear-gradient(215deg, hsla(240, 75%, 20%, 0.5) 0%, hsla(240, 25%, 50%, 0.75) 50%, hsla(240, 100%, 15%, 0.5) 100%);
+    --grey: rgb(175, 175, 175);
     --white-bg: hsl(0, 0%, 0%, 0.1);
 }
 
@@ -62,7 +65,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1;
-    box-shadow: 0 0 0px 0.1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0px 0.1rem rgba(0, 0, 0, 0.07);
 }
 
 .detached {
@@ -106,7 +109,7 @@ a:hover {
     fill: var(--primary-text);
 }
 
-.material-symbols-outlined {
+.material-symbols-rounded {
     cursor: pointer;
     font-variation-settings: 'FILL' 0;
 }
@@ -333,6 +336,10 @@ main {
     border-radius: 0.9rem;
 }
 
+.manual #prompt {
+    min-height: 4rem;
+}
+
 input[type="submit"] {
     border: 0.01rem solid var(--primary-accent);
     border-radius: 0.5rem;
@@ -350,9 +357,107 @@ input[type="submit"]:hover {
     color: #FFF;
 }
 
+/* From Uiverse.io by Maximinodotpy */ 
+.inputGroup {
+    /* margin: 1rem 0 1rem 0; */
+    flex: 1 0 auto;
+    position: relative;
+}
 
+.inputGroup input {
+    font-size: 100%;
+    padding: 0.8rem;
+    outline: none;
+    border: 0.1rem solid var(--grey);
+    background-color: transparent;
+    border-radius: 1rem;
+    width: 100%;
+    color: var(--primary-text);
+}
 
+.inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8rem;
+    margin-left: 0.5rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: var(--grey);
+}
 
+.inputGroup input:focus ~ label, .inputGroup input:not(:placeholder-shown) ~ label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0;
+    margin-left: 1.25rem;
+    padding: 0.4rem;
+    background-color: var(--primary-bg);
+}
+
+.inputGroup input:focus {
+    border-color: var(--primary-accent);
+}
+
+.personality-wrapper {
+    display: flex;
+    align-items: stretch;
+    /* justify-content: center; */
+    gap: 1rem;
+    width: 100%;
+    gap: 1rem;
+}
+
+.icon-btn {
+    aspect-ratio: 1 / 1;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--white-bg);
+    color: var(--primary-text);
+    border: 0.01rem solid var(--primary-accent);
+}
+
+.icon-btn:hover {
+    background-color: var(--primary-accent);
+    color: #FFF;
+}
+
+.styles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.dropdown-wrapper {
+    padding-right: 0.8rem;
+    outline: none;
+    border: 0.1rem solid var(--primary-accent);
+    background-color: transparent;
+    border-radius: 1rem;
+    color: var(--primary-text);
+    flex: 2 0 auto;
+}
+
+.dropdown {
+    padding: 0.8rem 0 0.8rem 0.8rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    color: var(--primary-text);
+    cursor: pointer;
+}
+
+.dropdown-wrapper:has(.dropdown:focus) {
+    border-radius: 0.75rem;
+}
+
+.style-preview {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+}
 
 .hidden {
     display: none;

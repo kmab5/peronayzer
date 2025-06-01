@@ -8,25 +8,58 @@
     <!-- From Uiverse.io by Yaya12085 --> 
     <form class="radio-inputs">
         <label class="radio">
-            <input type="radio" id="auto" value="auto" name="mode" checked>
+            <input type="radio" id="auto" value="auto" name="mode">
             <span class="name">Automatic</span>
         </label>
         <label class="radio">
-            <input type="radio" id="manual" value="manual" name="mode">
+            <input type="radio" id="manual" value="manual" name="mode" checked>
             <span class="name">Manual</span>
         </label>
     </form>
 
-    <div class="inp auto">
+    <div class="inp auto hidden">
         <form action="/auto" method="post">
             <textarea name="prompt" id="prompt" placeholder="Enter your prompt here...">Sample prompt: I want a bright persona</textarea>
             <input type="submit" value="Generate">
         </form>
     </div>
 
-    <div class="inp manual hidden">
-        <p>Manual</p>
+    <div class="inp manual">
+        <form action="/manual" method="post" class="inp">
+
+            <!-- From Uiverse.io by Maximinodotpy  -->
+            <div class="inputGroup">
+                <input type="text" name="name" id="name" placeholder=" " autocomplete="off">
+                <label for="name">Unique Name</label>
+            </div>
+
+            <div class="personality-wrapper">
+                <div class="inputGroup">
+                    <input type="text" id="personality-inp" name="personality-inp" placeholder=" " autocomplete="off">
+                    <label for="personality-inp">Personality</label>
+                </div>
+                <input type="hidden" id="personality" name="personality" value="">
+                <span class="material-symbols-rounded icon-btn add">add</span>
+            </div>
+            <p class="personalities">Personalities: </p>
+
+            <div class="styles">
+                <div class="dropdown-wrapper">
+                    <select name="style" id="style" class="dropdown">
+                        <option value="" selected>Random</option>
+                        <% for( let index = 0; index < icstyles.length; index++ ) { %>
+                            <option value="<%= icstyles[index] %>"><%= icstyles[index] %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <img src="https://api.dicebear.com/9.x/lorelei/svg?flip=true" alt="style-preview" class="style-preview"/>
+            </div>
+            <textarea name="prompt" id="prompt" placeholder="Do you have more specifications? Enter your extra info here..."></textarea>
+            <input type="submit" value="Generate">
+        </form>
     </div>
 </div>
 
+
+<script src="/scripts/home.js"></script>
 <%- include('partials/footer.ejs') %>
