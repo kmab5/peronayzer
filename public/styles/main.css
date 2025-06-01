@@ -7,6 +7,7 @@
     --primary-accent: hsl(240, 25%, 75%);
     --primary-light: hsla(240, 100%, 95%, 0.9);
     --primary-grad: linear-gradient(215deg, hsla(240, 75%, 80%, 0.5) 0%, hsla(240, 25%, 50%, 0.75) 50%, hsla(240, 100%, 85%, 0.5) 100%);
+    --white-bg: hsl(0, 0%, 100%, 0.1);
 }
 
 * {
@@ -34,6 +35,7 @@ body.dark {
     --primary-accent: hsl(240, 25%, 25%);
     --primary-light: hsla(240, 100%, 5%, 0.9);
     --primary-grad: linear-gradient(215deg, hsla(240, 75%, 20%, 0.5) 0%, hsla(240, 25%, 50%, 0.75) 50%, hsla(240, 100%, 15%, 0.5) 100%);
+    --white-bg: hsl(0, 0%, 0%, 0.1);
 }
 
 header {
@@ -46,12 +48,16 @@ header {
     padding: 0 2rem;
     background-color: var(--primary-light);
     border: 0.01rem solid var(--primary-accent);
-    -webkit-backdrop-filter: blur(1rem);
-    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(0.25rem);
+    backdrop-filter: blur(0.25rem);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1;
+}
+
+header.detached {
+    background-color: var(--white-bg);
 }
 
 header .right {
@@ -142,8 +148,8 @@ footer > p {
     background: var(--primary-grad);
     background-size: 400% 200%;
     border: 0.01rem solid var(--primary-accent);
-    -webkit-backdrop-filter: blur(16rem);
-    backdrop-filter: blur(16rem);
+    -webkit-backdrop-filter: blur(0.0.25rem);
+    backdrop-filter: blur(0.0.25rem);
     cursor: pointer;
     animation: none;
 }
@@ -185,8 +191,8 @@ footer > p {
         background-color: var(--primary-light);
         border-radius: 1rem;
         border: 0.01rem solid var(--primary-accent);
-        -webkit-backdrop-filter: blur(1rem);
-        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(0.25rem);
+        backdrop-filter: blur(0.25rem);
     }
 
     header .right .menu.menu-visible {
