@@ -4,6 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector(".menu");
     const close = document.querySelector(".close");
+    const modes = document.querySelectorAll('input[name="mode"]');
+    const auto = document.querySelector(".auto");
+    const manual = document.querySelector(".manual");
+
+
+    modes.forEach(mode => {
+        mode.addEventListener("change", () => {
+            if(mode.value === "auto") {
+                auto.classList.remove("hidden");
+                manual.classList.add("hidden");
+            } else {
+                auto.classList.add("hidden");
+                manual.classList.remove("hidden");
+            }
+        });
+    });
 
     darkToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark");

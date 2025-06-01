@@ -1,54 +1,32 @@
 <%- include('partials/header.ejs') %>
 
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
-<p>Content</p>
+<h1>Personayze ✨</h1>
+
+<span class="break"></span>
+
+<div class="form">
+    <!-- From Uiverse.io by Yaya12085 --> 
+    <form class="radio-inputs">
+        <label class="radio">
+            <input type="radio" id="auto" value="auto" name="mode" checked>
+            <span class="name">Automatic</span>
+        </label>
+        <label class="radio">
+            <input type="radio" id="manual" value="manual" name="mode">
+            <span class="name">Manual</span>
+        </label>
+    </form>
+
+    <div class="inp auto">
+        <form action="/auto" method="post">
+            <textarea name="prompt" id="prompt" placeholder="Enter your prompt here...">Sample prompt: I want a bright persona</textarea>
+            <input type="submit" value="Generate">
+        </form>
+    </div>
+
+    <div class="inp manual hidden">
+        <p>Manual</p>
+    </div>
+</div>
 
 <%- include('partials/footer.ejs') %>
