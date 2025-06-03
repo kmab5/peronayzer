@@ -43,6 +43,8 @@ const icstyles = [
   "thumbs"
 ];
 
+// Color API: https://www.thecolorapi.com/docs || https://www.thecolorapi.com/id{?hex,rgb,hsl,cmyk,format}
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
@@ -50,8 +52,6 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.render("index.ejs", {icstyles: icstyles});
 });
-
-// Fix the about page
 
 app.get("/about", (req, res) => {
   res.render("about.ejs");
@@ -71,8 +71,8 @@ app.get("/manual", (req, res) => {
 
 app.post("/auto", async (req, res) => {
   let seed = "", avatar= "", style = "", unqname = "", personalities = [], colors = [], prompt = req.body.prompt;
-
   let final_prompt = `${ai_prompt}. In my current prompt, I will only give you a general prompt to base off of to generate everything. Follow it to the best of your ability but be creative as well when generating your output. Prompt: ${prompt}`;
+
   try {
     const chat = await ai.models.generateContent({
       model: ai_model,
@@ -107,9 +107,8 @@ app.post("/auto", async (req, res) => {
 
 app.post("/manual", async (req, res) => {
   let seed = "", avatar = "", style = req.body.style, unqname = req.body.name, personalities = req.body.personality != "" ? req.body.personality.split(", ") : [], colors = [], prompt = req.body.prompt;
-
   let final_prompt = `${ai_prompt} uniquename:${unqname},style:${style},personalities:${personalities.join(",")},extrainfo:${prompt}`;
-
+  
   try {
     const chat = await ai.models.generateContent({
       model: ai_model,
