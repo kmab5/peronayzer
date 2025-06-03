@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modes = document.querySelectorAll('input[name="mode"]');
     const auto = document.querySelector(".auto");
     const manual = document.querySelector(".manual");
+    const forms = document.querySelectorAll("form.inp");
+    const loader = document.querySelector(".loading");
     const style = document.querySelector("#style");
     const stylePreview = document.querySelector(".style-preview");
     const personality = document.querySelector("#personality");
@@ -62,7 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     style.addEventListener("change", () => {
         if(style.value === "") stylePreview.src = "https://api.dicebear.com/9.x/" + iconStyles[Math.floor(Math.random() * iconStyles.length)] + "/svg?flip=true";
-        else stylePreview.src = "https://api.dicebear.com/9.x/" + style.value + "/svg?flip=true";
-        
+        else stylePreview.src = "https://api.dicebear.com/9.x/" + style.value + "/svg?flip=true"; 
     });
+
+    forms.forEach(form => {
+        form.addEventListener("submit", (e) => {
+            loader.classList.remove("hidden");
+        });
+    });
+
+    loader.classList.add("hidden");
 });
