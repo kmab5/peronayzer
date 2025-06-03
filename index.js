@@ -51,8 +51,14 @@ app.get("/", (req, res) => {
   res.render("index.ejs", {icstyles: icstyles});
 });
 
+// Fix the about page
+
 app.get("/about", (req, res) => {
   res.render("about.ejs");
+});
+
+app.get("/error", (req, res) => {
+  res.render("error.ejs");
 });
 
 app.get("/auto", (req, res) => {
@@ -134,6 +140,10 @@ app.post("/manual", async (req, res) => {
     console.log(error);
     res.redirect("/");
   }
+});
+
+app.all("*path", (req, res) => {
+  res.redirect("/error");
 });
 
 app.listen(port, () => {

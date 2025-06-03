@@ -17,14 +17,14 @@
         </label>
     </form>
 
-    <div class="inp auto hidden">
+    <div class="inp auto">
         <form action="/auto" method="post" class="inp">
             <textarea name="prompt" id="prompt" placeholder="Enter your prompt here...">Sample prompt: I want a bright persona</textarea>
             <input type="submit" value="Generate">
         </form>
     </div>
 
-    <div class="inp manual">
+    <div class="inp manual hidden">
         <form action="/manual" method="post" class="inp">
 
             <!-- From Uiverse.io by Maximinodotpy  -->
@@ -59,7 +59,6 @@
         </form>
     </div>
 </div>
-
 
 <script src="/scripts/home.js"></script>
 <%- include('partials/footer.ejs') %>

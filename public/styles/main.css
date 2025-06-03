@@ -553,6 +553,23 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
+.error {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    gap: 2rem;
+}
+
+.error p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.error .colored {
+    color: orangered;
+}
+
 .colored:hover {
     color: var(--primary-accent);
 }
