@@ -5,9 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector(".menu");
     const close = document.querySelector(".close");
 
+    let mode = localStorage.getItem("mode");
+    if(mode == "dark") {
+        document.body.classList.add("dark");
+        darkToggle.classList.add("active-icon");
+    }
+
     darkToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark");
         darkToggle.classList.toggle("active-icon");
+        if(document.body.classList.contains("dark")) localStorage.setItem("mode", "dark");
+        else localStorage.setItem("mode", "light");
     });
 
     menuToggle.addEventListener("click", () => {

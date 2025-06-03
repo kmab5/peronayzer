@@ -1,7 +1,44 @@
 <%- include('partials/header.ejs') %>
 
-<a href="/"><span class="material-symbols-rounded icon-btn home">home</span></a>
+<div class="form">
 
-<%- avatar %>
+    <div class="title">
+        <a href="/"><span class="material-symbols-rounded icon-btn home">home</span></a>
+        <h2>Hey <span class="colored"><%= unqname %></span> 👋 Here is your persona! ✨ </h2>
+    </div>
 
+    <div class="inputGroup unq-name">
+        <input type="text" name="name" id="name" placeholder=" " autocomplete="off" value="<%= unqname %>" disabled>
+        <label for="name">Unique Name</label>
+    </div>
+
+    <div class="avatar-container">
+        <div class="inputGroup">
+            <input type="text" name="style" id="style" placeholder=" " autocomplete="off" value="<%= style %>" disabled>
+            <label for="style">Style</label>
+        </div>
+        <div class="inputGroup">
+            <input type="text" name="seed" id="seed" placeholder=" " autocomplete="off" value="<%= seed %>" disabled>
+            <label for="seed">Seed</label>
+        </div>
+        <div class="right"><%- avatar %></div>
+    </div>
+
+    <div class="personalities">
+        <h3>Personalities: </h3>
+        <% for( let index = 0; index < personalities.length; index++ ) { %>
+            <div class="personality"><%= personalities[index] %></div>
+        <% } %>
+    </div>
+
+    <div class="colors">
+        <h3>Colors: </h3>
+        <% for( let index = 0; index < colors.length; index++ ) { %>
+            <div class="color"><span class="color-text"><%= colors[index] %></span><span class="material-symbols-rounded copy">content_copy</span></div>
+        <% } %>
+    </div>
+
+</div>
+
+<script src="/scripts/result.js"></script>
 <%- include('partials/footer.ejs') %>
