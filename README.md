@@ -12,7 +12,7 @@ A simple avatar creator fueled by imagination! Create your persona using [Gemini
 
 ## Usage 📑📖
 
-You can check out the free website here: [Persona Generator 🎭](https://kmab5.github.io/)!
+You can check out the free website here: [Persona Generator 🎭](https://peronayzer.onrender.com/)!
 
 To install and run locally, clone the repository and run the following command in the root folder.
 
@@ -31,27 +31,27 @@ node index.js
 
 ## Examples 🧪
 
-![persona_1]()
+![persona_1](./public/images/flourish.svg)
 
-> **Code Name:** kmab  
-> **Personality Descriptors:** bright, playful, solo-player  
-> **Colors:** Orange (#ae3102), Grey (#)
+> **Code Name:** flourish lume  
+> **Personality Descriptors:** optimistic, nurturing, resilient, uplifting  
+> **Colors:** Lime Green (#9bv48f), Cream (#f9e0ae)
 
-![persona_2]()
+![persona_2](./public/images/solius.svg)
 
-> **Code Name:** kmab  
-> **Personality Descriptors:** bright, playful, solo-player  
-> **Colors:** Orange (#ae3102), Grey (#)
+> **Code Name:** solius speculum  
+> **Personality Descriptors:** contemplative, reserved, perceptive, discerning  
+> **Colors:** Slate Blue (#3c5b6f), Faded Pink (#8b6d74)
 
-![persona_3]()
+![persona_3](./public/images/glimmerfen.svg)
 
-> **Code Name:** kmab  
-> **Personality Descriptors:** bright, playful, solo-player  
-> **Colors:** Orange (#ae3102), Grey (#)
+> **Code Name:** glimmerfen  
+> **Personality Descriptors:** vivacious, skeptical, pragmatic, stoic  
+> **Colors:** Burnt Orange (#b7410e), Wine Purple (#5b3d8a)
 
-## Shoutouts 📢
+### Shoutouts 📢
 
 - Gemini!
 - DiceBear!
 
-### kmab
+### [kmab](https://www.github.com/kmab5/)

@@ -3,7 +3,7 @@ import axios from "axios";
 import { GoogleGenAI } from "@google/genai";
 
 const app = express();
-const port = 8214;
+const port = process.env.PORT || 8214;
 
 const ai = new GoogleGenAI({ apiKey: "AIzaSyCbsRej9iWPcGRtkEenlVFYU2MrieseCs4" });
 const ai_model = "gemini-2.5-flash-preview-05-20";

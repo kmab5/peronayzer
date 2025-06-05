@@ -483,6 +483,7 @@ input[type="submit"]:hover {
 .avatar {
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 
 .personalities {
@@ -546,6 +547,19 @@ input[type="submit"]:hover {
 
 .copy {
     font-size: 1rem;
+}
+
+.download.icon-btn {
+    opacity: 0;
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 4rem;
+    left: 1rem;
+    padding: 0.2rem;
+}
+
+.download:hover, .avatar:hover ~ .download {
+    opacity: 1;
 }
 
 .colored {
@@ -639,6 +653,31 @@ input[type="submit"]:hover {
     color: #FFF;
 }
 
+.about .preview {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.about .preview > p {
+    min-width: 25%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    flex-grow: 1;
+}
+
+.about .preview img {
+    border-radius: 1rem;
+}
+
+.about .preview blockquote {
+    flex-grow: 1;
+    background-color: var(--primary-light);
+    border-radius: 1rem;
+    border: 0.01rem solid var(--primary-accent);
+    padding: 1rem;
+}
+
 @media (max-width: 576px) {
     :root {
         font-size: 16px;
@@ -678,6 +717,10 @@ input[type="submit"]:hover {
 
     .menu-toggle {
         display: block;
+    }
+
+    .about .preview {
+        flex-direction: column;
     }
 }
 
